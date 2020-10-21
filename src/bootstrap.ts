@@ -37,6 +37,5 @@ export const bootstrap = async () => {
 
   SwaggerModule.setup('/', app, document);
 
-  //npx nodemon server.js --ext ts
   await app.listen(3000);
 }
