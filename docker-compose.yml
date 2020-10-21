@@ -1,0 +1,9 @@
+version: "3"
+services: 
+  insta_db:
+    image: "postgres:11"
+    container_name: "insta_db"
+    ports: 
+      - "54321:5432"
+    environment: 
+      POSTGRES_PASSWORD: "password"

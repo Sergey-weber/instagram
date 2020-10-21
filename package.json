@@ -1,0 +1,32 @@
+{
+  "name": "nest-insta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "6.5",
+    "@nestjs/core": "6.5",
+    "@nestjs/platform-express": "6.5",
+    "@nestjs/swagger": "3.1",
+    "@okta/okta-auth-js": "2.6",
+    "@okta/okta-sdk-nodejs": "2.0",
+    "class-transformer": "0.2",
+    "class-validator": "0.9",
+    "cookie-parser": "1.4",
+    "dotenv": "8.0",
+    "glob": "7.1",
+    "pg": "7.12",
+    "reflect-metadata": "0.1",
+    "rxjs": "6.5",
+    "swagger-ui-express": "4.0",
+    "ts-node": "8.3",
+    "typeorm": "0.2",
+    "typescript": "3.5"
+  }
+}
