@@ -13,7 +13,7 @@ const requireDefaults = (pattern: string) => {
 
 const controllers = requireDefaults('*.module/*-controller.ts');
 
-const middleware = requireDefaults('*.module/*middleware.ts');
+const middleware = requireDefaults('*.module/*-middleware.ts');
 
 @Module({
   controllers
@@ -37,5 +37,5 @@ export const bootstrap = async () => {
 
   SwaggerModule.setup('/', app, document);
 
-  await app.listen(3000);
+  await app.listen(4000);
 }
