@@ -6,8 +6,8 @@ import cookieParser from 'cookie-parser';
 import glob from 'glob';
 
 const requireDefaults = (pattern: string) => {
-  return glob.sync(pattern, { absolute: true })
-    .map(require => require)
+  return glob.sync(pattern, { cwd: __dirname, absolute: true })
+    .map(require)
     .map(imported => imported.default);
 }
 

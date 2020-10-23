@@ -1,9 +1,9 @@
 import { getManager } from 'typeorm';
 import { UserModel } from './user-model';
 
-export const assertUser = async (oktaUserId: string) => {
+export const assertUser = async (oktaId: string) => {
   const manager = getManager();
-  const existingUser = await manager.findOne(UserModel, { where: { oktaUserId } });
+  const existingUser = await manager.findOne(UserModel, { where: { oktaId } });
 
   if( existingUser ) {
     return existingUser;
@@ -11,7 +11,7 @@ export const assertUser = async (oktaUserId: string) => {
 
   const user = new UserModel();
 
-  user.oktaId = oktaUserId;
+  user.oktaId = oktaId;
 
   return await manager.save(user);
 }

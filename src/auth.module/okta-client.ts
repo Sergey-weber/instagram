@@ -1,5 +1,6 @@
 import { Client as OktaClient } from '@okta/okta-sdk-nodejs';
 import OktaAuth from '@okta/okta-auth-js';
+import { IsEmail } from 'class-validator';
 
 const { OKTA_DOMAIN, OKTA_APP_TOKEN } = process.env;
 
@@ -26,9 +27,9 @@ export interface IRegistrationResponse {
 }
 
 export const register = async (registerData: IRegisterData): Promise<IRegistrationResponse> => {
-  const { email: login, firstName, lastName, password } = registerData;
-  const createdUser = await oktaClient.createdUser({
-    profile:  { login, firstName, lastName },
+  const { email, firstName, lastName, password } = registerData;
+  const createdUser = await oktaClient.createUser({
+    profile:  { email, login: email, firstName, lastName },
     credentials: { password: { value: password } }
   });
 
